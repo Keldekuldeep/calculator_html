@@ -1,0 +1,108 @@
+body {
+ background-image: url('bg4.jpg');	
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+
+
+.calculator {
+    display: grid;
+    gap: 4px; 
+    grid-template-rows: auto;
+    grid-template-columns: repeat(4, 60px); 
+    max-width: 255px; 
+    background: linear-gradient(135deg, #4b4b4b, #2d2d2d); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    border-radius: 12px; 
+    padding: 5px; 
+    border: 1px solid #444; 
+	
+	 box-shadow: 
+        inset 0 0 5px rgba(0, 0, 0, 0.6), 
+       25px 25px 25px black;
+	   
+    position: relative; /* Positioning for potential child elements */
+}
+
+.calculator::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 12px;
+    z-index: -1; /* Place behind the calculator */
+}
+
+
+.display {
+	
+	 width: 270px;  
+    height: 40px;   /* Set the height of the text field */
+    grid-column:  span 4;
+    padding: 30px;  /* Add some padding inside the text field */
+    border: 3px solid #ccc;  /* Add a border */
+    border-radius: 10px; /* Optional: Rounded corners */
+    font-size: 1em;  /* Set font size */
+    box-sizing: border-box; 
+	
+    background: linear-gradient(135deg, #333, #444); /* Gradient background */
+    color: cyan;                 /* Text color */
+    
+    text-align: right;           /* Text alignment */
+    outline: none;               /* Remove default outline on focus */
+    
+	box-shadow: 
+        inset 0 0 5px rgba(0, 0, 0, 0.6), /* Inner shadow for inset effect */
+       15px 15px 15px black;
+}
+
+
+.btn {
+	
+	 width: 60px;            /* Adjust the width as needed */
+    height: 60px;           /* Adjust the height as needed */
+    border-radius: 50%;    /* This makes the button circular */
+    background-color: #4CAF50; /* Button background color */
+
+	color: black;          /* Text color */
+    border: none;          /* Remove default border */
+    font-size: 24px;       /* Font size */
+    display: flex;         /* Use flexbox to center the text */
+    align-items: center;  /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    cursor: pointer;       /* Change cursor to pointer */
+
+	 
+    /* transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */ */
+		
+	padding: 15px 30px;       /* Vertical and horizontal padding */
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.5); /* 3D shadow */ */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    transform: translateY(4px); /* Initial position to create depth */
+}
+
+
+
+.btn:hover 
+{
+	background: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.btn:active {
+    
+
+ background-color: #388e3c;
+ box-shadow: 
+       0 0 20px 10px rgba(255, 105, 180, 0.7),  
+        0 0 25px 15px rgba(0, 255, 255, 0.7),  
+        0 0 30px 20px rgba(255, 215, 0, 0.7);  
+    transform: translateY(8px); 
+
+}
